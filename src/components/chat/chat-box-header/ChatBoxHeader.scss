@@ -1,0 +1,19 @@
+.chat-box-header {
+  @apply sticky top-0 self-start flex flex-row justify-between bg-white w-full p-[8px] px-[16px] border-b-[1px] border-grey z-[1];
+  .chat-box-header-item {
+    @apply flex items-center;
+    .image {
+      @apply me-[15px] bg-grey-tertiary flex text-center items-center justify-center min-w-[40px] h-[40px] rounded-full text-white font-bold;
+    }
+    span{
+        @apply text-grey-tertiary;
+    }
+    svg{
+        @apply text-[30px] mr-[15px] cursor-pointer text-blue;
+    }
+
+    &.back-button{
+        @apply sm:hidden;
+    }
+  }
+}

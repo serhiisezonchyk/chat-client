@@ -1,0 +1,31 @@
+.chat-item-container{
+    @apply flex  my-[10px] px-[10px] py-[15px] cursor-pointer justify-between  hover:bg-grey;
+
+    .chat-item-user-info{
+        @apply flex truncate;
+        .image{
+            @apply relative me-[15px] bg-grey-tertiary flex text-center items-center justify-center min-w-[40px] h-[40px] rounded-full text-white font-bold;
+            span{
+                @apply absolute w-[10px] h-[10px] bg-green rounded-full bottom-[2px] right-0;
+            }
+        }
+        .chat-item-text-wrapper{
+            @apply min-w-[150px] ;
+        }
+    }
+    p{
+        @apply truncate w-full;
+        &.grey-text{
+            @apply text-grey-tertiary;
+        }
+    }
+    .chat-item-date-info{
+        @apply text-end ;
+        p{
+            @apply text-[12px]
+        }
+        span{
+            @apply text-white bg-blue text-[12px] p-[3px] px-[6px] rounded-full;
+        }
+    }
+}

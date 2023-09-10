@@ -1,0 +1,15 @@
+.chat-box-footer{
+    @apply sticky bottom-0 w-full flex bg-white border-t-[1px] border-grey h-[63px];
+    .chat-box-footer-item{
+        @apply flex w-full items-center my-[6px] mx-[10px];
+        input{
+            @apply outline-none w-full h-[40px] pl-[20px] rounded-full
+        }
+        svg{
+            @apply h-[30px]  w-auto cursor-pointer m-[10px];
+            &.send-button{
+                @apply text-blue;
+            }
+        }
+    }
+}
