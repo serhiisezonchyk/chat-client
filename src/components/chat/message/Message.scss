@@ -1,10 +1,10 @@
 .message-container {
-  @apply bg-transparent my-[12px];
+  @apply bg-transparent my-[12px] ;
   .message-wrapper {
     @apply flex;
 
     .message {
-      @apply flex flex-col bg-grey p-[10px]  h-auto min-w-[200px] max-w-[350px] ml-[20px] mr-0 rounded-[10px];
+      @apply flex flex-col bg-grey dark:bg-grey-dark text-black dark:text-white p-[10px] h-auto min-w-[200px] max-w-[350px] ml-[20px] mr-0 rounded-[10px];
 
       span {
         @apply text-end text-[12px] text-grey-tertiary;
@@ -13,9 +13,10 @@
     &.self {
       @apply justify-end;
       .message {
-        @apply relative bg-blue-tertiary  mr-[20px] ml-0  
+        @apply relative bg-blue-tertiary dark:bg-purple-secondary mr-[20px] ml-0  
               after:content-[''] after:absolute after:top-0 
-              after:right-[-8px] after:border-transparent after:border-t-blue-tertiary
+              after:right-[-8px] after:border-transparent 
+              after:border-t-blue-tertiary dark:after:border-t-purple-secondary
               after:border-[10px] after:border-t-[10px];
       }
     }
@@ -23,6 +24,7 @@
       .message {
         @apply relative before:content-[''] before:absolute before:bottom-0 
             before:left-[-8px] before:border-transparent before:border-b-grey
+            dark:before:border-b-grey-dark
             before:border-[10px] before:border-b-[10px];
       }
     }

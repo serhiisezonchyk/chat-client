@@ -1,7 +1,7 @@
 import React from 'react';
 import './AuthPage.scss';
 import { Link, Navigate } from 'react-router-dom';
-import { LOGIN_ROUTE, MAIN_ROUTE} from '../../utils/consts';
+import { LOGIN_ROUTE, MAIN_ROUTE } from '../../utils/consts';
 import { SiRocketdotchat } from 'react-icons/si';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsAuth } from '../../store/slices/auth.slice';
@@ -24,14 +24,12 @@ const RegistrationPage = () => {
     setError,
   } = useForm({
     mode: 'onSubmit',
-    reValidateMode:'onChange',
+    reValidateMode: 'onChange',
     resolver: formSchemaObject,
   });
 
   const onSubmit = async (values) => {
-    console.log(values)
     const data = await dispatch(registerUser(values));
-    console.log(data);
     if (data?.error?.message) {
       setError('login', {
         type: 'manual',
@@ -131,8 +129,8 @@ const RegistrationPage = () => {
           </div>
           <button>Sign up</button>
         </div>
+        <Link to={LOGIN_ROUTE}>Back to sign in...</Link>
       </form>
-      <Link to={LOGIN_ROUTE}>Back to sign in...</Link>
     </div>
   );
 };

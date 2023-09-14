@@ -1,19 +1,19 @@
 .chat-box-header {
-  @apply sticky top-0 self-start flex flex-row justify-between bg-white w-full p-[8px] px-[16px] border-b-[1px] border-grey z-[1];
+  @apply sticky top-0 self-start flex flex-row justify-between border-b-[1px] bg-body dark:bg-body-dark border-grey dark:border-grey-dark  w-full p-[8px] px-[16px] z-[1];
   .chat-box-header-item {
-    @apply flex items-center;
+    @apply flex items-center text-black dark:text-white;
     .image {
-      @apply me-[15px] bg-grey-tertiary flex text-center items-center justify-center min-w-[40px] h-[40px] rounded-full text-white font-bold;
+      @apply me-[15px] bg-grey-tertiary flex text-center items-center justify-center min-w-[40px] h-[40px] rounded-full text-body font-bold;
     }
-    span{
-        @apply text-grey-tertiary;
+    span {
+      @apply text-grey-tertiary;
     }
-    svg{
-        @apply text-[30px] mr-[15px] cursor-pointer text-blue;
+    svg {
+      @apply text-[30px] mr-[15px] cursor-pointer text-blue dark:text-purple; 
     }
 
-    &.back-button{
-        @apply sm:hidden;
+    &.back-button {
+      @apply sm:hidden;
     }
   }
 }

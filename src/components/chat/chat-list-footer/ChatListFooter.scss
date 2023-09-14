@@ -1,20 +1,24 @@
 .footer-chat {
-    @apply fixed bottom-0 left-0 w-full bg-body h-fit flex flex-row justify-between py-[10px] px-[15px] sm:p-[10px] border-t-[1px] border-grey;
-    .footer-chat-item {
-      @apply flex flex-col flex items-center cursor-pointer text-grey-tertiary;
+  @apply fixed bottom-0 left-0 w-full bg-body dark:bg-body-dark border-t-[1px] border-grey dark:border-grey-dark h-fit flex flex-row justify-between py-[10px] px-[15px] sm:p-[10px] ;
+  .footer-chat-item {
+    @apply relative flex flex-col flex items-center cursor-pointer text-grey-tertiary;
+    svg {
+      @apply h-[24px]  w-auto transition-all duration-300 ease-in-out;
+    }
+    &:hover {
       svg {
-        @apply h-[24px]  w-auto transition-all duration-300 ease-in-out;
-      }
-      &:hover {
-        svg {
-          @apply scale-[1.1];
-        }
-      }
-      p {
-        @apply text-[12px];
-      }
-      &.active{
-        @apply text-blue;
+        @apply scale-[1.1];
       }
     }
+    p {
+      @apply text-[12px];
+    }
+    &.active {
+      @apply text-blue dark:text-purple;
+    }
   }
+}
+
+.notification-lable {
+  @apply absolute flex justify-center items-center right-0 h-[15px] w-[15px] text-[10px] bg-blue border-[1px] border-white border-white rounded-full p-[3px] text-white;
+}

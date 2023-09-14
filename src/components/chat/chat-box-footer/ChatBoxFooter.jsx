@@ -1,11 +1,12 @@
 import React from 'react';
 import './ChatBoxFooter.scss';
-import { MdOutlineEmojiEmotions, MdSend } from 'react-icons/md';
+import { MdSend } from 'react-icons/md';
 import InputEmoji from 'react-input-emoji';
 import { useDispatch, useSelector } from 'react-redux';
 import { createMessage } from '../../../store/services/message.service';
 import { selectAuthData } from '../../../store/slices/auth.slice';
-import { selectCurentChat } from '../../../store/slices/chat.slice';
+import { chatActions, selectCurentChat } from '../../../store/slices/chat.slice';
+import { createChat } from '../../../store/services/chat.service';
 const ChatBoxFooter = () => {
   const dispatch = useDispatch();
 
@@ -14,12 +15,23 @@ const ChatBoxFooter = () => {
 
   const [text, setText] = React.useState('');
   const handleSend = async () => {
-    const values = {
-      chat_id: current_chat.id,
-      sender_id: user._id,
-      text: text,
-    };
-    dispatch(createMessage(values));
+    let newChat;
+    if (!current_chat?.id) {
+      const values = {
+        sender_id: user?._id,
+        recipient_id: current_chat?.members[0]?.user.id,
+      };
+      newChat = await dispatch(createChat(values));
+    }
+    if (text.trim() !== '') {
+      const values = {
+        chat_id: !newChat ? current_chat.id : newChat.payload.id,
+        sender_id: user._id,
+        text: text,
+      };
+      const message =  await dispatch(createMessage(values));
+      dispatch(chatActions.updateUserLastMessage(message.payload))
+    }
   };
   React.useEffect(() => {
     setText('');

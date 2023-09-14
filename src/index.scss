@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark {
+    @apply bg-body-dark;
+  }
+  html {
+    @apply w-full h-screen bg-body;
+  }
+
+  body {
+    @apply w-full dark:bg-body-dark;
+  }
+  #root {
+    @apply w-full dark:bg-body-dark;
+  }
+}

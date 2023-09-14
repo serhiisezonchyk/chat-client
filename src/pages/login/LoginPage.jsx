@@ -80,6 +80,7 @@ const LoginPage = () => {
         </div>
       </form>
       <Link to={REGISTER_ROUTE}>Or create new account...</Link>
+
     </div>
   );
 };

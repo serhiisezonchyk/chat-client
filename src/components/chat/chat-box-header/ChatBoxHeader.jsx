@@ -5,10 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   chatActions,
   selectCurentChat,
+  selectOnlineUsers,
 } from '../../../store/slices/chat.slice';
 const ChatBoxHeader = () => {
   const dispatch = useDispatch();
   const current_chat = useSelector(selectCurentChat);
+  const online_users = useSelector(selectOnlineUsers);
   const user = current_chat.members[0].user;
 
   const handleBackOnClick = async () => {
@@ -26,7 +28,11 @@ const ChatBoxHeader = () => {
         <div className='image'>{user?.name[0]}</div>
         <div className='chat-box-text-wrapper'>
           <p>{user?.name}</p>
-          <span>waiting for network...</span>
+          <span>
+            {online_users?.some((list_user) => list_user?.userId === user?.id)
+              ? 'Online'
+              : 'Offline'}
+          </span>
         </div>
       </div>
       <div className='chat-box-header-item'>

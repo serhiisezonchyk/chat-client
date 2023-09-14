@@ -1,26 +1,25 @@
-.chat-box-container{
-    @apply hidden sm:flex;
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-    &::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
-    }
-    .chat-box-body{
-        @apply flex flex-col flex-nowrap justify-end ;
-    }
+.chat-box-container {
+  @apply hidden sm:flex;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  .chat-box-body {
+    @apply flex flex-col flex-nowrap justify-end;
+  }
 
-    .selection-message{
-        @apply flex w-full bg-grey items-center justify-center;
-        h1{
-            @apply flex text-grey-tertiary  mb-[5px] bg-white rounded-[10px] px-[5px];
-        }
+  .selection-message {
+    @apply flex w-full bg-grey dark:bg-body-dark items-center justify-center;
+    h1 {
+      @apply flex text-grey-tertiary bg-body dark:bg-grey-dark mb-[5px] rounded-[10px] px-[5px];
     }
-    &.chat-is-selected{
-        @apply flex flex-col overflow-y-scroll h-screen bg-white justify-between w-full;
+  }
+  &.chat-is-selected {
+    @apply flex flex-col overflow-y-scroll h-screen bg-body dark:bg-body-dark justify-between w-full;
+  }
 
-    }
-
-    h1{
-        @apply flex text-grey-tertiary  mb-[5px] justify-center;
-    }
+  h1 {
+    @apply flex text-grey-tertiary mb-[5px] justify-center;
+  }
 }

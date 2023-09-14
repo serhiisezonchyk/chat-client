@@ -13,28 +13,29 @@
   }
 }
 .login-page {
-  @apply flex  w-full h-screen items-center mt-[30px] sm:mt-0 sm:justify-center flex-col;
+  @apply flex w-full dark:bg-body-dark h-screen items-center pt-[30px] sm:pt-0 sm:justify-center flex-col;
   .logo {
-    @apply rounded-full text-black sm:text-white sm:bg-opacity-50 sm:bg-blue-secondary;
+    @apply rounded-full text-black dark:text-purple sm:text-body sm:dark:text-body-dark sm:bg-opacity-50 sm:bg-blue-secondary sm:dark:bg-purple;
     svg {
       @apply h-[120px]  w-auto p-[15px] m-[10px];
     }
   }
 
   h1 {
-    @apply text-[30px];
+    @apply text-[30px] dark:text-white;
   }
   p {
     @apply text-grey-tertiary text-center;
   }
   .login-container {
-    @apply mt-[20px] min-h-[230px] min-w-[300px] w-[360px];
+    @apply flex flex-col mt-[20px] min-h-[230px] min-w-[300px] w-[360px] h-fit;
     .login-form {
-      @apply mt-[20px] flex flex-col items-center p-[15px] bg-transparent sm:bg-grey sm:bg-opacity-50 rounded-[7px] p-2;
+      @apply bg-transparent sm:bg-grey sm:bg-opacity-50 sm:dark:bg-purple-secondary sm:dark:bg-opacity-50
+      mt-[20px] flex flex-col items-center p-[15px] rounded-[7px] p-2;
       .input-box {
         @apply relative flex mb-[10px] flex-col;
         input {
-          @apply bg-transparent min-w-[230px] w-[300px] my-[15px] h-[40px] outline-none border-0 border-b-[2px] border-grey-secondary hover:border-blue focus:border-blue;
+          @apply bg-transparent min-w-[230px] w-[300px] my-[15px] h-[40px] outline-none border-0 border-b-[2px] border-grey-secondary hover:border-blue dark:hover:border-purple focus:border-blue dark:focus:border-purple text-black dark:text-white;
           &.invalid-data {
             @apply border-b-red;
             &::placeholder {
@@ -51,10 +52,15 @@
       }
     }
     button {
-      @apply bg-blue-tertiary min-w-[300px] sm:bg-transparent sm:hover:bg-blue-light sm:w-full text-blue rounded-[4px] hover:bg-opacity-90 h-[40px] mt-[10px];
+      @apply bg-blue-tertiary dark:bg-purple text-blue dark:text-white hover:bg-opacity-90 dark:hover:bg-opacity-95
+      min-w-[300px] sm:w-full rounded-[4px]  h-[40px] mt-[10px] 
+      sm:bg-transparent sm:dark:bg-transparent sm:hover:bg-blue-light
+      transition-all duration-300 ease-in-out;
     }
   }
   a {
-    @apply text-blue hover:text-blue-secondary min-w-[300px] w-[360px] text-start sm:text-end pl-[24px] sm:pr-[8px] my-[10px];
+    @apply text-blue hover:text-blue-secondary  dark:text-purple dark:hover:text-purple-secondary
+    min-w-[300px] w-[360px] text-start sm:text-end pl-[24px] sm:pr-[8px] my-[10px]
+    transition-all duration-300 ease-in-out;
   }
 }

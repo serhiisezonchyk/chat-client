@@ -8,7 +8,6 @@ export const useFetchRecipient = (chat, user) => {
     const getUser = async () => {
         if(!recipientId) return null;
         const response = await fetchOneUser(recipientId);
-        console.log(response)
         setRecipientUser(response);
     };
     getUser();
